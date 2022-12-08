@@ -1,0 +1,48 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="row">
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+            <div class="row g-3 mt-3">
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 text-center">
+                    <h1>Search Patient</h1>
+                </div>
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                    <label for="" class="form-label">Patient name</label>
+                    <input type="text" class="form-control" name="name" [(ngModel)]="name">
+                </div>
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 text-center">
+                    <button class="btn btn-success" (click)="readValue()">Search</button>
+                </div>
+            </div>
+            <div class="row mt-5 g-3" *ngFor="let j of searchData">
+                <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                    <label for="" class="form-label">Patient Name</label>
+                    <input type="text" class="form-control" value="{{j.name}}">
+                </div>
+                <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                    <label for="" class="form-label">Image</label>
+                    <input type="text" class="form-control" value="{{j.image}}">
+                </div>
+                <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                    <label for="" class="form-label">Address</label>
+                    <input type="text" class="form-control" value="{{j.address}}">
+                </div>
+                <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                    <label for="" class="form-label">Phone</label>
+                    <input type="text" class="form-control" value="{{j.phone}}">
+                </div>
+                <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                    <label for="" class="form-label">Date of Appointment</label>
+                    <input type="date" class="form-control" value="{{j.dateofappointment}}">
+                </div>
+                <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                    <label for="" class="form-label">Doctor Name</label>
+                    <input type="text" class="form-control" value="{{j.doctorname}}">
+                </div>
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                    <button class="btn btn-danger" (click)="deleteBtnClick(j.id)">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
